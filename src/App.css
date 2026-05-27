@@ -1,0 +1,279 @@
+:root {
+  --bg: #6b7280;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --chip: #f1f1f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.hero {
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 1.05;
+  margin: 0 0 0.75rem;
+  color: #334155;
+}
+.hero p {
+  color: #e5e7eb;
+}
+
+.cta {
+  font-size: 1.1rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
+  border: none;
+  background: #111827;
+  color: white;
+  cursor: pointer;
+}
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 44, 52, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.modal {
+  width: 100%;
+  max-width: 460px;
+  background: var(--card);
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+.modal-close {
+  position: absolute;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--chip);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.social-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.social-button {
+  height: 92px;
+  border: none;
+  border-radius: 16px;
+  background: var(--chip);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.social-button:hover:not(:disabled) {
+  background: #e7e7ea;
+}
+.social-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.email-row {
+  display: flex;
+  align-items: center;
+  background: var(--chip);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.email-icon {
+  padding: 0 0.9rem;
+  color: #9ca3af;
+  border-right: 1px solid #dadade;
+}
+.email-input,
+.text-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 1rem;
+  font-size: 1rem;
+  outline: none;
+}
+.text-input {
+  background: var(--chip);
+  border-radius: 14px;
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--muted);
+  margin: 1.1rem 0;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ── Wallet list ── */
+.wallet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.wallet-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 16px;
+  background: var(--chip);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.wallet-button:hover:not(:disabled) {
+  background: #e7e7ea;
+}
+.wallet-button:disabled {
+  opacity: 0.6;
+}
+.wallet-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+}
+.wallet-icon--placeholder {
+  background: #d1d5db;
+}
+.wallet-name {
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
+}
+.wallet-status {
+  font-size: 0.8rem;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.wallet-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+}
+.wallet-status--neutral {
+  color: #6b7280;
+}
+.wallet-status--neutral::before {
+  display: none;
+}
+
+.verify {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.primary-button {
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: none;
+  background: #111827;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin: 0.75rem 0 0;
+}
+
+.modal-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 1.25rem;
+}
+.modal-footer a {
+  color: #111827;
+}
+.brand {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ── Account card ── */
+.account-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  min-width: 340px;
+}
+.account-card h3 {
+  margin-top: 0;
+}
+.account-card dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1rem;
+  margin: 0 0 1.25rem;
+}
+.account-card dt {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.account-card dd {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+}
